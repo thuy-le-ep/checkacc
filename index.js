@@ -134,14 +134,15 @@ const checkFacebookEmail = async (emails) => {
 
 
 (async () => {
-	var emails1 = emailGenerator(1000, 'hotmail.com', 'vi')
-	var notRegEmail1 = await checkNotRegHotMail(emails1);
+	// var emails1 = emailGenerator(1000, 'hotmail.com', 'vi')
+	// var notRegEmail1 = await checkNotRegHotMail(emails1);
 
-	var emails2 = emailGenerator(1000, 'yahoo.com', 'vi')
-	var notRegEmail2 = await checkNotRegYahoo(emails2)
+	// var emails2 = emailGenerator(1000, 'yahoo.com', 'vi')
+	// var notRegEmail2 = await checkNotRegYahoo(emails2)
 
-	var results = await checkFacebookEmail([...notRegEmail1, ...notRegEmail2])
+	// var results = await checkFacebookEmail([...notRegEmail1, ...notRegEmail2])
+	var results = await checkFacebookEmail(['langtu388@yahoo.com', 'langtu38@yahoo.com'])
 
-	fs.writeFileSync('./data/via.txt', results.join('\n'), 'utf-8')
+	fs.writeFileSync('./data/via' + new Date().valueOf() + '.txt', results.join('\n'), 'utf-8')
 
 })()
