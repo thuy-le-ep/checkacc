@@ -134,10 +134,10 @@ const checkFacebookEmail = async (emails) => {
 
 
 (async () => {
-	var emails1 = emailGenerator(1, 'hotmail.com', 'vi')
+	var emails1 = emailGenerator(1000, 'hotmail.com', 'vi')
 	var notRegEmail1 = await checkNotRegHotMail(emails1);
 
-	var emails2 = emailGenerator(1, 'yahoo.com', 'vi')
+	var emails2 = emailGenerator(1000, 'yahoo.com', 'vi')
 	var notRegEmail2 = await checkNotRegYahoo(emails2)
 
 	var results = await checkFacebookEmail([...notRegEmail1, ...notRegEmail2])
